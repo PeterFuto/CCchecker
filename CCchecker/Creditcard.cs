@@ -13,6 +13,7 @@ namespace CCchecker
         public int IssuerID { get; set; }
         public int AccountNumber { get; set; }
         public int Checksum { get; set; }
+        public bool Valid { get; set; }
 
         public Creditcard(string ccnumber)
         {
@@ -21,6 +22,7 @@ namespace CCchecker
             IssuerID = Convert.ToInt32(ccnumber.Substring(1, 5));
             AccountNumber = Convert.ToInt32(ccnumber.Substring(6, 9));
             Checksum = Convert.ToInt32(ccnumber.Substring(15, 1));
+            Valid = IsValid();
         }
         public void DisplayInfo()
         {
@@ -29,6 +31,7 @@ namespace CCchecker
             Console.WriteLine($"Card issuer ID is: {IssuerID}");
             Console.WriteLine($"Card account number is: {AccountNumber}");
             Console.WriteLine($"Card checksum is: {Checksum}");
+            Console.WriteLine($"Card validty is: {Valid}");
         }
         public bool IsValid()
         {

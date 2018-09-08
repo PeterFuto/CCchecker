@@ -10,12 +10,8 @@ namespace CCchecker
     {
         static void Main(string[] args)
         {
-            Creditcard cc = new Creditcard("4578423013769219");
+            Creditcard cc = new Creditcard("4563648800001007");
             cc.DisplayInfo();
-            if (cc.IsValid())
-            {
-                Console.WriteLine($"{cc.CCnumber} is valid");
-            }
             Console.ReadLine();
         }
     }
